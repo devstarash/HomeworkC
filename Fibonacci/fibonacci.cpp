@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<int> sum(vector<int> a, vector<int> b){
+vector<int> sum(vector<int>& a, vector<int>& b){
     vector<int> c;
     int carry = 0;
     int minSize = a.size() > b.size() ? b.size() : a.size();
