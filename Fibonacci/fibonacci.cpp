@@ -3,22 +3,22 @@
 using namespace std;
 vector<int> sum(vector<int>& a, vector<int>& b){
     vector<int> c;
-    int carry = 0;
+    int remainder = 0;
     int minSize = a.size() > b.size() ? b.size() : a.size();
     for(int i = 0; i < minSize; i++){
-        c.push_back((carry+ a[i] + b[i]) % 10);
-        carry = (carry + a[i] + b[i]) / 10;                                                      
+        c.push_back((remainder+ a[i] + b[i]) % 10);
+        remainder = (remainder + a[i] + b[i]) / 10;                                                      
     }
     if ( a.size() > b.size()){
-        c.push_back((a[a.size()-1] + carry) % 10);
-        carry = (a[a.size()-1] + carry) / 10;    
+        c.push_back((a[a.size()-1] + remainder) % 10);
+        remainder = (a[a.size()-1] + remainder) / 10;    
     } else if (a.size() < b.size()){
-        c.push_back((b[b.size()-1] + carry) % 10);
-        carry = (b[b.size()-1] + carry) / 10;    
+        c.push_back((b[b.size()-1] + remainder) % 10);
+        remainder = (b[b.size()-1] + remainder) / 10;    
 
     }
-    if (carry > 0){
-        c.push_back(carry);
+    if (remainder > 0){
+        c.push_back(remainder);
     }
     return c;
 }
