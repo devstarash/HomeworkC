@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <cmath>
 using namespace std;
 bool isSimple(char *array){
     unsigned long long int sum = 0;
@@ -21,6 +20,7 @@ bool isSimple(char *array){
     return isSimple;
 }
 int main(void){
+    setlocale(LC_ALL,"RU");
     char buffer[11];
     buffer[10] = '\0';
     ifstream file;
